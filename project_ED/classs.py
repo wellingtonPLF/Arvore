@@ -30,7 +30,7 @@ class No:
         self._titulo = titulo
 
     def __str__(self):
-        return f"............................\nAno = {self._ano}\nTitulo = {self._titulo}\n............................"
+        return "............................\nAno = {}\nTitulo = {}\n............................".format(self._ano, self._titulo)
 
 class Arvore:
     def __init__(self, arvore = None, check = None):
@@ -64,12 +64,12 @@ class Arvore:
                         break
         self.balanceamento(self._arvore,-1)
 
-    def busca_titulo(self,arvore,dado):
+    def buscar_titulo(self,arvore,dado):
         if arvore is not None:
             if arvore.get_titulo() == dado:
                 return arvore
-            a = self.busca_titulo(arvore.get_left(),dado)
-            b =self.busca_titulo(arvore.get_right(),dado)
+            a = self.buscar_titulo(arvore.get_left(),dado)
+            b =self.buscar_titulo(arvore.get_right(),dado)
             if a == None and b == None:
                 return None
             else:
@@ -83,7 +83,7 @@ class Arvore:
     def busca_ano(self,arvore,dado):
         if arvore is not None:
             if arvore.get_ano() == dado:
-                return arvore
+                print(arvore)
             a = self.busca_ano(arvore.get_left(),dado)
             b =self.busca_ano(arvore.get_right(),dado)
             if a == None and b == None:
